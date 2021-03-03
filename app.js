@@ -1,44 +1,40 @@
-// let num1 = parseFloat(prompt("Ingrese el primer valor"));
-// let num2 = parseFloat(prompt("Ingrese el segundo valor"));
-// let operacion = prompt(
-//   "Elija la operacion: SUMA | RESTA | MULTIPLICACION | DIVISION"
-// );
+/*Realiza un script que pida cadenas de texto  hasta que se pulse “cancelar”. Al salir con “cancelar” deben mostrarse todas las cadenas concatenadas con un guión -.
+ */
 
-// if (operacion) {
-//   operacion = operacion.toUpperCase();
-// }
+/*
+Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
+*/
 
-// if (isNaN(num1)) {
-//   num1 = 0;
-// }
-// if (isNaN(num2)) {
-//   num2 = 0;
-// }
+/*
+Realiza un script que cuente el número de vocales que tiene un texto.
+*/
 
-// switch (operacion) {
-//   case "SUMA":
-//     console.log(`La suma entre ${num1} y ${num2} es de ${num1 + num2}`);
-//     break;
-//   case "RESTA":
-//     console.log(`La resta entre ${num1} y ${num2} es de ${num1 - num2}`);
-//     break;
-//   case "MULTIPLICACION":
-//     console.log(
-//       `La multiplicación entre ${num1} y ${num2} es de ${num1 * num2}`
-//     );
-//     break;
-//   case "DIVISION":
-//     if (num1 === 0 || num2 === 0) {
-//       console.error("No se puede realizar la división con valores en cero");
-//     } else {
-//       console.log(`La división entre ${num1} y ${num2} es de ${num1 / num2}`);
-//     }
-//     break;
-//   default:
-//     console.error(`la operación es inválida`);
-//     break;
-// }
+let texto = prompt("Ingresar texto");
 
-//Piedra papel o tijera
+let vocales = [];
 
-// Callbaks son funciones que se ejecutan despues de un método
+for (let i = 0; i < texto.length; i++) {
+  let letra = texto.charAt(i).trim().toLowerCase();
+
+  switch (letra) {
+    case "a":
+      vocales.push(letra);
+      break;
+    case "e":
+      vocales.push(letra);
+      break;
+    case "i":
+      vocales.push(letra);
+      break;
+    case "o":
+      vocales.push(letra);
+      break;
+    case "u":
+      vocales.push(letra);
+      break;
+  }
+}
+
+console.log(`El texto ${texto} tiene ${vocales.length} vocales`);
+
+console.log(vocales);

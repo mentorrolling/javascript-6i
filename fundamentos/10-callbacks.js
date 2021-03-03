@@ -7,7 +7,7 @@ numeros.sort(function (a, b) {
 
 // Crear un nuevo arreglo en base a la condición
 
-let pares = numeros.filter(function (numero) {
+let pares = numeros.filter(function (num) {
   return num % 2 === 0;
 });
 
