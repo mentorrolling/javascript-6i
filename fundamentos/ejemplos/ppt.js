@@ -1,46 +1,48 @@
-let opciones = ["Piedra", "Papel", "Tijera"];
-let jugador = 0;
-let computadora = 0;
+let opciones = ["PIEDRA", "PAPEL", "TIJERA"];
+let jugador = null;
+let bot = null;
 
-function eligeCompu() {
-  computadora = Math.round(Math.random() * 2);
-  return computadora;
+function playGame() {
+  seleccionBot();
+  seleccionJugador();
 }
 
-function play() {
-  eligeCompu();
+//Funcion para que el bot elija una opcion
+function seleccionBot() {
+  return (bot = Math.round(Math.random() * 2));
+}
+
+function seleccionJugador() {
   jugador = parseInt(
-    prompt("Elija una opcion (0: Piedra | 1: Papel | 2: Tijera)")
+    prompt("Ingrese su opción: 0 = PIEDRA | 1 = PAPEL | 2 = TIJERA")
   );
 
-  if (isNaN(jugador)) {
-    console.error("Debe elegir una de las opciones validas");
+  if (!isNaN(jugador)) {
+    if (jugador >= 0 && jugador <= 2) {
+      switch (true) {
+        case jugador === bot:
+          console.warn("EMPATE");
+          break;
+        case jugador === 0 && bot === 2:
+          console.log("GANASTE");
+          break;
+        case jugador === 1 && bot === 0:
+          console.log("GANASTE");
+          break;
+        case jugador === 2 && bot === 1:
+          console.log("GANASTE");
+          break;
+        default:
+          console.error("PERDISTE");
+          break;
+      }
+      console.log(
+        `Elegiste ${opciones[jugador]} y el bot eligió ${opciones[bot]} `
+      );
+    } else {
+      console.error("No existe la opción elegida");
+    }
   } else {
-    ejecucion();
-  }
-}
-
-function ejecucion() {
-  switch (true) {
-    case jugador === 0 && computadora === 2:
-      console.log("GANASTE");
-
-      break;
-    case jugador === 1 && computadora === 0:
-      console.log("GANASTE");
-
-      break;
-    case jugador === 2 && computadora === 1:
-      console.log("GANASTE");
-
-      break;
-    case jugador === computadora:
-      console.warn("EMPATE");
-
-      break;
-
-    default:
-      console.error("PERDISTE");
-      break;
+    console.error("Debe ingresar un número entre 0 y 2");
   }
 }

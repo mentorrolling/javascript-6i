@@ -1,40 +1,65 @@
-/*Realiza un script que pida cadenas de texto  hasta que se pulse “cancelar”. Al salir con “cancelar” deben mostrarse todas las cadenas concatenadas con un guión -.
- */
+// let auto = {
+//   color: "red",
+//   marca: "Fiat",
+//   modelo: "Palio",
+//   annio: 2018,
+//   encendido: false,
+//   encenderApagar: function () {
+//     this.encendido = !this.encendido;
+//     if (this.encendido) {
+//       console.log("El vehículo está encendido");
+//     } else {
+//       console.log("El vehículo está apagado");
+//     }
+//   },
+// };
+
+let alumno = {
+  nombre: "Pablo Marino",
+  edad: 38,
+  dni: "29640333",
+  curso: "Fullstack",
+  saludar: function () {
+    console.log(`Hola, mi nombre es ${this.nombre}`);
+  },
+};
+
+//obtener valores
+
+alumno.nombre;
+
+alumno["edad"];
+
+//Agregar un nuevo atributo
+alumno.domicilio = "Lomas de tafí";
+
+//Modificar un valor
+alumno.nombre = "Pablo Daniel Marino";
+
+//Eliminar un valor
+delete alumno.edad;
 
 /*
-Realiza un script que pida números hasta que se pulse “cancelar”. Si no es un número deberá indicarse con un «alert» y seguir pidiendo números. Al salir con “cancelar” deberá indicarse la suma total de los números introducidos.
+La instrucción for-in itera sobre todas las propiedades enumerables de un objeto que está codificado por cadenas.
 */
 
-/*
-Realiza un script que cuente el número de vocales que tiene un texto.
-*/
-
-let texto = prompt("Ingresar texto");
-
-let vocales = [];
-
-for (let i = 0; i < texto.length; i++) {
-  let letra = texto.charAt(i).trim().toLowerCase();
-
-  switch (letra) {
-    case "a":
-      vocales.push(letra);
-      break;
-    case "e":
-      vocales.push(letra);
-      break;
-    case "i":
-      vocales.push(letra);
-      break;
-    case "o":
-      vocales.push(letra);
-      break;
-    case "u":
-      vocales.push(letra);
-      break;
-  }
+for (let atributo in alumno) {
+  console.log(`${atributo}: ${alumno[atributo]}`);
 }
 
-console.log(`El texto ${texto} tiene ${vocales.length} vocales`);
+//Arreglo de objetos
+let alumnos = [
+  { nombre: "Julio", curso: "Fullstack" },
+  { nombre: "Fabricio", curso: "Javascript" },
+  { nombre: "Miguel", curso: "Fullstack" },
+];
+//recorrer el arreglo de objetos
 
-console.log(vocales);
+alumnos.forEach((alumno) => {
+  console.log(`Nombre: ${alumno.nombre} - ${alumno.curso}`);
+  console.log("----------------------------------");
+});
+
+for (let index = 0; index < alumnos.length; index++) {
+  console.log(`Nombre: ${alumnos[index].nombre} - ${alumnos[index].curso}`);
+}

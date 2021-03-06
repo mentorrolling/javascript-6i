@@ -1,0 +1,26 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Helvetica, Arial, sans-serif;
+}
+
+.div-flex {
+  font-size: 20px;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.div-flex a {
+  background-color: rgb(0, 76, 139);
+  color: white;
+  text-decoration: none;
+  padding: 20px 50px;
+  border-radius: 50px;
+}
+
+.div-flex a:hover {
+  opacity: 0.6;
+}
