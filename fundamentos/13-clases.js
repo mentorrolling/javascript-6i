@@ -62,10 +62,72 @@ class Cuenta {
       this.informar();
     }
   }
-  informar() {
+  get informar() {
     console.log("==========Detalle de la cuenta=============");
     console.log(`Titular: ${this.titular}`);
     console.log(`Saldo: ${parseFloat(this.saldo.toFixed(2))}`);
     console.log("===========================================");
+  }
+}
+
+let cuenta1 = new Cuenta("Pablo", 10000);
+let cuenta2 = new Cuenta("Carlos");
+
+/*
+Producto
+Escribe una clase Producto para crear objetos. Estos objetos, deben presentar las propiedades código, nombre y precio, además del método imprimeDatos, el cual escribe por pantalla los valores de sus propiedades.
+Posteriormente, cree tres instancias de este objeto y guárdalas en un array.
+Por último, utilice el método imprime datos para mostrar por pantalla los valores de los tres objetos instanciados.
+
+*/
+
+class Producto {
+  constructor(codigo, nombre, precio) {
+    this.codigo = codigo;
+    this.nombre = nombre;
+    this.precio = precio;
+  }
+
+  get imprimeDatos() {
+    console.log(`Código: ${this.codigo}`);
+    console.log(`Nombre: ${this.nombre}`);
+    console.log(`Precio: $${this.precio}`);
+    console.log("==========================");
+  }
+}
+
+let productos = [];
+
+function addProducto() {
+  let veces = parseInt(prompt("Cuantos productos va a ingresar?"));
+
+  if (isNaN(veces) || veces <= 0) {
+    console.error("Debe ingresar un número mayor que cero");
+    return;
+  }
+
+  for (let i = 0; i < veces; i++) {
+    let codigo = i + 1;
+    let nombre = prompt(`Ingrese el nombre del producto #${i + 1}`);
+
+    //Validar datos de entrada--------------------
+    if (nombre === "" || nombre === null) {
+      console.error("Faltaron datos o se canceló");
+      return;
+    } else {
+      let precio = parseFloat(prompt("Ingrese el precio"));
+      if (isNaN(precio)) {
+        console.error("No se ingresó un número o se canceló");
+        return;
+      }
+      productos.push(
+        new Producto(codigo, nombre.toUpperCase(), precio.toFixed(2))
+      );
+    }
+    //------------------------------------------------------
+  }
+
+  for (let index = 0; index < productos.length; index++) {
+    productos[index].imprimeDatos();
   }
 }
