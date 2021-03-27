@@ -2,3 +2,8 @@
   width: 100%;
   height: 300px;
 }
+
+.imagenCarrito {
+  width: 150px;
+  object-fit: contain;
+}
