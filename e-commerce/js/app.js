@@ -136,7 +136,7 @@ function cargarModal() {
       <div class="card-body">
         <h5 class="card-title">${prod.cantidad} ${prod.nombre}</h5>
         <p class="card-text">Precio: $${prod.precio}</p>
-        <a href="#" class="btn btn-danger">Eliminar</a>
+        <a href="#" class="btn btn-danger" onclick="delElementCarrito(${prod.id})" >Eliminar</a>
       </div>
     </div>
   </div>
@@ -157,6 +157,31 @@ mostrarModal()
 function verCarrito() {
   cargarModal();
   $("#modalCarrito").modal("show");
+}
+
+function delElementCarrito(id) {
+  let index = carrito.findIndex(function (prod) {
+    return prod.id === id;
+  });
+
+  let cantidad = carrito[index].cantidad;
+
+  carrito.splice(index, 1);
+
+  localStorage.setItem("carrito", JSON.stringify(carrito));
+
+  //Manejar el tema del stock
+  let indexProd = productos.findIndex(function (prod) {
+    return prod.codigo === id;
+  });
+
+  productos[indexProd].stock += cantidad;
+
+  localStorage.setItem("productos", JSON.stringify(productos));
+
+  cargarCard();
+  cargarModal();
+  cantidadCarrito();
 }
 
 cargarCard();

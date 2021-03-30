@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(187, 184, 184);
+  height: 100vh;
+}
+header nav {
+  height: 40vh;
+  align-items: flex-start;
+}
+
+.box {
+  position: relative;
+  top: -100px;
+  border-radius: 10px;
+  background-color: white;
+  text-align: center;
+  min-height: 370px;
+}
+form {
+  padding-left: 20px;
+  padding-right: 20px;
+}
