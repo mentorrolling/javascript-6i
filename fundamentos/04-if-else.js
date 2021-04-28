@@ -48,6 +48,38 @@ if (edad < 18 && tutor === false) {
   console.log("Puede entrar y disfrutar de la fiesta");
 }
 
+
+//Otra forma
+
+// let tutor = null
+
+// let edad = prompt('Ingrese su edad')
+// if (edad < 18) {
+//     let validar = prompt('Vienes con un tutor? | Si | No')
+//     if (validar === 'Si') {
+//         tutor = true
+//     } else {
+//         tutor = false
+//     }
+// }
+
+// if (edad >= 18) {
+//     console.log('Bienvenido a la fiesta');
+// } else if (tutor) {
+//     console.log('Binvenido a la fiesta, no se separe de su tutor');
+// } else {
+//     console.error('No puede acceder a la fiesta');
+// }
+
+// if (edad >= 18 || tutor === true) {
+//     console.log('Bienvenido a la fiesta');
+// } else {
+//     console.error('No puede acceder a la fiesta');
+// }
+
+
+
+
 //Tarea
 /*
 - Ingresan dos numeros

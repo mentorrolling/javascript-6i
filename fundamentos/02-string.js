@@ -10,8 +10,8 @@ console.log(nombre.toUpperCase());
 console.log(apellido.toLowerCase());
 
 console.log(nombre.length);
-console.log(nombre.charAt(4));
-console.log(apellido.substr(0, 3));
+console.log(nombre.charAt(4));//El método charAt() de String devuelve en un nuevo String el carácter UTF-16 de una cadena.
+console.log(apellido.substr(0, 3)); //El método substr() devuelve los caracteres de una cadena que comienzan en una localización especificada y de acuerdo al número de caracteres que se especifiquen.
 console.log(frase.trim());
 
 //traer la última letra del apellido
