@@ -1,4 +1,7 @@
 //Funciones constructoras
+/*
+La función constructora es una plantilla con la cual podemos crear varios objetos. Normalmente, para diferenciarla de otras funciones se la suele nombrar con mayúscula.
+*/
 
 function Movies(titulo, sinopsis, director, reparto) {
   this.titulo = titulo;
@@ -8,9 +11,9 @@ function Movies(titulo, sinopsis, director, reparto) {
 }
 
 Movies.prototype.listar = function () {
-  console.log(this.titulo);
-  console.log(this.sinopsis);
-  console.log(this.director);
+  console.log("Título:", this.titulo);
+  console.log("Sinópsis:", this.sinopsis);
+  console.log("Director:", this.director);
 };
 
 // let jurasic = new Movies(
@@ -36,14 +39,15 @@ function crearMovies() {
         "Ingrese el nombre de los actores separados por comas"
       );
 
-      if (
-        titulo === null ||
-        sinopsis === null ||
-        director === null ||
-        reparto === null
-      ) {
-        i = contador;
-        console.error("El usuario canceló algunos datos");
+      // if (
+      //   titulo === null ||
+      //   sinopsis === null ||
+      //   director === null ||
+      //   reparto === null
+      // )
+      if (!titulo || !sinopsis || !director || !reparto) {
+        // i = contador;
+        console.error("Faltaron datos necesarios");
       } else {
         peliculas.push(new Movies(titulo, sinopsis, director, reparto));
       }

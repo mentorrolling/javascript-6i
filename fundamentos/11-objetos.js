@@ -1,18 +1,18 @@
-// let auto = {
-//   color: "red",
-//   marca: "Fiat",
-//   modelo: "Palio",
-//   annio: 2018,
-//   encendido: false,
-//   encenderApagar: function () {
-//     this.encendido = !this.encendido;
-//     if (this.encendido) {
-//       console.log("El vehículo está encendido");
-//     } else {
-//       console.log("El vehículo está apagado");
-//     }
-//   },
-// };
+let auto = {
+  color: "red",
+  marca: "Fiat",
+  modelo: "Palio",
+  annio: 2018,
+  encendido: false,
+  encenderApagar: function () {
+    this.encendido = !this.encendido;
+    if (this.encendido) {
+      console.log("El vehículo está encendido");
+    } else {
+      console.log("El vehículo está apagado");
+    }
+  },
+};
 
 let alumno = {
   nombre: "Pablo Marino",

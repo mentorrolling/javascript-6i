@@ -1,5 +1,7 @@
 //Clases
-
+/*
+Una clase es un contenedor que define las propiedades y métodos que van a tener los objetos creados a partir de este
+*/
 class Persona {
   constructor(nombre, apellido) {
     this.nombre = nombre;
@@ -10,6 +12,16 @@ class Persona {
     console.log(`Hola, soy ${this.nombre} ${this.apellido}`);
   }
 }
+
+/*
+La extends palabra clave se utiliza para crear una clase secundaria de otra clase (principal).
+
+La clase hija hereda todos los métodos de otra clase.
+
+La herencia es útil para la reutilización del código: reutiliza propiedades y métodos de una clase existente cuando creas una nueva clase.
+
+Nota: del ejemplo anterior; El super()método se refiere a la clase principal. Al llamar al super()método en el método constructor, llamamos al método constructor del padre y obtenemos acceso a las propiedades y métodos del padre.
+*/
 
 class Profesor extends Persona {
   constructor(nombre, apellido, materia) {
