@@ -1,0 +1,14 @@
+body {
+  background: linear-gradient(to right, #ce179d 0%, #a4118e 50%, #a02ac5 100%);
+}
+
+.play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.play button {
+  font-size: 50px;
+  padding: 20px;
+}
